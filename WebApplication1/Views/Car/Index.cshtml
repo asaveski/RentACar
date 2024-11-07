@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication1.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Our Cars</h2>
+
+<p>
+    @if (Request.IsAuthenticated && (User.IsInRole("Admin")))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.modelYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.registrationPlate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pricePerDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.modelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.registrationPlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pricePerDay)
+            </td>
+            <td>
+                <img src="@Url.Content(item.ImagePath)" />
+            </td>
+            <td>
+                @if (Request.IsAuthenticated && (User.IsInRole("Admin")))
+                {
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IDcar })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IDcar })
+                    </p>
+                }
+
+                @Html.ActionLink("Details", "Details", new { id = item.IDcar })
+            </td>
+        </tr>
+    }
+
+</table>
+<p></p>
+<p>@Html.ActionLink("Reservate now!", "Create", "Reservations", null, new { @class = "btn btn-primary btn-large" })</p>

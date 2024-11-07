@@ -1,0 +1,47 @@
+﻿@model WebApplication1.Models.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.modelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modelYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.registrationPlate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.registrationPlate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pricePerDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pricePerDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+    </dl>
+</div>
+

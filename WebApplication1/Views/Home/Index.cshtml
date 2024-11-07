@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to Rent A Car</h1><br />
+    <p class="lead">That wonderful feeling – you start the engine and your adventure begins…</p>
+    <p>@Html.ActionLink("Reserve your car now!", "", "Car", null, new { @class = "btn btn-primary btn-large" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>What we're about</h2>
+        <p>
+            We want to make renting a car as simple and personal as driving your own.
+
+            Renting a car brings you freedom, and we’ll help you find the right car for you at a great price. 
+            But there’s much more to us than that. We're here to make renting a car a lot less hassle.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>How we work</h2>
+        <p>
+            Order your prefered car and type in your exact location and our drivers will shortly deliver the car to you.
+            When they do, you'll get the key and give the driver the amount stated in your billing report
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Why use us</h2>
+        <p>
+            In simple terms, because we bring you unbeatable value and peace of mind throughout your rental car journey.
+
+            We use all our experience – and the experiences of millions of our customers – 
+            to bring you the car you need and the quality of service you want. 
+            Always at the best price. 
+        </p>
+    </div>
+</div>
